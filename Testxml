@@ -1,0 +1,21 @@
+var objSpecAlert;
+        function DelaySpecialAlert()
+        {
+        clearTimeout(objSpecAlert);
+        }
+        function ShowSpecialAlert(txtAlert,incidentid,e)
+        {
+            var evt = e ? e:window.event;
+            var posX=0, posY=0;
+            if ((evt.clientX || evt.clientY) && document.body && document.body.scrollLeft!=null) {
+                posX = evt.clientX + document.body.scrollLeft;
+                posY = evt.clientY + document.body.scrollTop;
+            }
+            if ((evt.clientX || evt.clientY) && document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.scrollLeft!=null) {
+                posX = evt.clientX + document.documentElement.scrollLeft;
+                posY = evt.clientY + document.documentElement.scrollTop;
+            }
+            if (evt.pageX || evt.pageY) {
+                posX = evt.pageX;
+                posY = evt.pageY;
+            }
